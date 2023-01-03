@@ -41,7 +41,7 @@ public class Review implements Serializable{
 		this.user = user;
 		this.movie = movie;
 	}
-
+	
 	public Long getId() {
 		return id;
 	}

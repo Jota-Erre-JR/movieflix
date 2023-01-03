@@ -27,7 +27,7 @@ public class UserService implements UserDetailsService{
 	private UserRepository repository;
 	
 	@Autowired
-	private AuthenticServices authService; 
+	private AuthenticService authService; 
 	
 	@Transactional(readOnly = true)
 	public UserDTO findById(Long userId) {
