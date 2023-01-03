@@ -1,0 +1,53 @@
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar{
+  padding: 0px, 0px;
+}
+
+.main-nav {
+  min-height: 70px;
+  padding-left: 18px;
+  display: flex;
+}
+
+.nav-logo-text,
+.nav-logo-text:hover {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  color: #000000;
+}
+
+
+@media (min-width: 576px) {
+  .navbar {
+    padding: 0px;
+  }
+
+  .main-nav {
+    padding-left: 23px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0px;
+  }
+
+  .main-nav {
+    padding-left: 31px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 0px;
+  }
+
+  .main-nav {
+    padding-left: 50px;
+  }
+}
