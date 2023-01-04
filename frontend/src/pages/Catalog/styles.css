@@ -1,0 +1,16 @@
+.catalog-main-card h1 {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  margin: 12px 17px 50px 17px;
+}
+
+.catalog-list {
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}

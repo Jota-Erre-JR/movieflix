@@ -1,0 +1,15 @@
+.moviedetails-card h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  margin: 17px 45px 0px 10px;
+}
+
+@media (min-width: 1200px) {
+  .moviedetails-card h1 {
+    font-size: 48px;
+    margin: 36px 233px 0px 40px;
+  }
+}
