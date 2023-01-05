@@ -6,20 +6,35 @@
   border-radius: 4px;
   height: 50px;
   width: 280px;
+  display: flex;
+  align-items: center;
   align-content: center;
+  justify-content: center;
 }
 
 .btn-post-review p {
   margin-bottom: 0px;
   font-weight: 700;
   font-size: 16px;
-  line-height: 22px;
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.015em;
   justify-content: center;
   color: #000000;
+}
+
+@media (min-width: 576px) {
+  .btn-post-review,
+  .btn-post-review:hover,
+  .btn-post-review.active,
+  .btn-post-review.disable {
+    width: 380px;
+  }
+
+  .btn-post-review p {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 1200px) {

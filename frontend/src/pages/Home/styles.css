@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: row;
   align-content: center;
-  padding: 17px 11px;
+  justify-content: center;
+  padding: 17px 10px;
 }
 
 .home-card {
@@ -12,6 +13,14 @@
 .login-card-container {
   display: flex;
   align-items: center;
+}
+
+@media (min-width: 576px) {
+ 
+  .home-container {
+   padding: 40px 48px;
+  }
+
 }
 
 @media (min-width: 1200px) {

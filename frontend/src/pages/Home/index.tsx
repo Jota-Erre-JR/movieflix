@@ -1,6 +1,7 @@
 import { ReactComponent as MainImage } from 'assets/images/main_image.svg';
 
 import './styles.css';
+import Login from './Login';
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
           
         </div>
         <div className="login-card-container">
-            <h1>Login Card</h1>
+            <Login />
           </div>
       </div>
     </>

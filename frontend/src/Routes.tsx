@@ -2,7 +2,7 @@ import Navbar from 'components/Navbar';
 import Catalog from 'pages/Catalog';
 import Home from 'pages/Home';
 import MovieDetails from 'pages/MovieDetails';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 const Routes = () => {
   return (
@@ -12,6 +12,7 @@ const Routes = () => {
         <Route path="/" exact>
           <Home />
         </Route>
+        <Redirect from="/movies" to="/" />
         <Route path="/movies" exact>
           <Catalog />
         </Route>
