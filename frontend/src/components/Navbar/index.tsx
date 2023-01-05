@@ -1,6 +1,6 @@
 import './styles1.css';
 import 'bootstrap/js/dist/collapse.js';
-import ButtonIcon from 'components/LogoutBtn';
+import NavbarBtn from 'components/NavbarBtn';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -11,10 +11,8 @@ const Navbar = () => {
           <Link to="/" className="nav-logo-text">
             <h4>MovieFlix</h4>
           </Link>
-
-          <ButtonIcon />
-
-          
+          <NavbarBtn text="Sair" />
+   
         </div>
       </nav>
     </>

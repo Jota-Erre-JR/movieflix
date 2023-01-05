@@ -1,5 +1,5 @@
-button{
-    margin: 0px;
+button {
+  margin: 0px;
 }
 
 .btn-logout,
@@ -16,7 +16,7 @@ button{
 }
 
 .btn-logout p {
-    margin: 0px;
+  margin: 0px;
   font-weight: 700;
   font-size: 14px;
   display: flex;

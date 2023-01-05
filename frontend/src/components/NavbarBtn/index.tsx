@@ -1,13 +1,17 @@
 import './styles2.css'
 
-const ButtonIcon = () =>{
+type Props = {
+    text: string;
+  }
+  
+  const NavbarBtn = ({text} : Props) => {
     return(
         <div>
         <button type="button" className="btn btn-primary btn-logout">
-            <p>Sair</p>
+            <p>{text}</p>
         </button>
         </div>
     )
 }
 
-export default ButtonIcon;
+export default NavbarBtn;

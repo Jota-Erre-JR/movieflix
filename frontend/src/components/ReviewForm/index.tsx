@@ -1,3 +1,4 @@
+import MainButton from 'components/MainButton';
 import './styles.css';
 
 const ReviewForm = () => {
@@ -7,11 +8,7 @@ const ReviewForm = () => {
         <div className="form-outline">
           <input type="form" placeholder="Deixe sua avaliação aqui" aria-label="Deixe sua avaliação aqui" className="review-form"/>
         </div>
-        <div className="post-review-button">
-        <button type="button" className="btn btn-post-review">
-          <p>SALVAR AVALIAÇÃO</p>
-        </button>
-        </div>
+        <MainButton text="SALVAR AVALIAÇÃO" />
       </div>
     </>
   );

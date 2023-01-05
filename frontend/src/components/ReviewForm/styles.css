@@ -30,30 +30,6 @@ input {
   margin-bottom: 17px;
 }
 
-.btn-post-review,
-.btn-post-review:hover,
-.btn-post-review.active,
-.btn-post-review.disable {
-  background: #ffc700;
-  border-radius: 4px;
-  height: 50px;
-  width: 280px;
-  align-content: center;
-}
-
-.btn-post-review p {
-  margin-bottom: 0px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.015em;
-  justify-content: center;
-  color: #000000;
-}
-
 @media (min-width: 1200px) {
   .post-review-container {
     margin: 25px 40px;
@@ -67,14 +43,4 @@ input {
     width: calc(calc(100vw) - 114px);
   }
 
-  .btn-post-review,
-  .btn-post-review:hover,
-  .btn-post-review.active,
-  .btn-post-review.disable {
-      width: 334px;
-  }
-
-  .btn-post-review p {
-    font-size: 20px;
-  }
 }
