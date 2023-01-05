@@ -2,6 +2,7 @@ import MovieCard from 'components/MovieCard';
 
 import './styles.css';
 import { Movie } from 'types/movie';
+import { Link } from 'react-router-dom';
 
 const Catalog = () => {
   const movie: Movie = {
@@ -66,10 +67,14 @@ const Catalog = () => {
       </div>
       <div className="catalog-list">
         <div>
-          <MovieCard movie={movie} />
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
         </div>
         <div>
-          <MovieCard movie={movie} />
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
         </div>
       </div>
     </>
