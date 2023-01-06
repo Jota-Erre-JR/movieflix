@@ -7,7 +7,7 @@ type Props = {
   const NavbarBtn = ({text} : Props) => {
     return(
         <div>
-        <button type="button" className="btn btn-primary btn-logout">
+        <button className="btn btn-primary btn-logout">
             <p>{text}</p>
         </button>
         </div>

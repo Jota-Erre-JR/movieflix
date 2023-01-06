@@ -17,11 +17,10 @@ const Home = () => {
               <MainImage />
             </div>
           </div>
-          
         </div>
         <div className="login-card-container">
-            <Login />
-          </div>
+          <Login />
+        </div>
       </div>
     </>
   );
