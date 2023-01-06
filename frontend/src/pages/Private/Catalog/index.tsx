@@ -1,8 +1,9 @@
-import MovieCard from 'components/MovieCard';
-
 import './styles.css';
-import { Movie } from 'types/movie';
+
+import MovieCard from 'components/MovieCard';
 import { Link } from 'react-router-dom';
+import { Movie } from 'types/movie';
+
 
 const Catalog = () => {
   const movie: Movie = {
@@ -39,24 +40,6 @@ const Catalog = () => {
           },
         ],
       },
-      {
-        id: 2,
-        text: 'Gostei e recomendo!',
-        movieId: 1,
-        user: [
-          {
-            id: 1,
-            name: 'Bob',
-            email: 'bob@gmail.com',
-            roles: [
-              {
-                id: 1,
-                authority: 'ROLE_VISITOR',
-              },
-            ],
-          },
-        ],
-      },
     ],
   };
 
@@ -66,8 +49,7 @@ const Catalog = () => {
         <h1>Tela listagem de filmes</h1>
       </div>
       <div className="catalog-list">
-        <div>
-          <Link to="/movies/1">
+         <Link to="/movies/1">
             <MovieCard movie={movie} />
           </Link>
         </div>
@@ -75,7 +57,6 @@ const Catalog = () => {
           <Link to="/movies/1">
             <MovieCard movie={movie} />
           </Link>
-        </div>
       </div>
     </>
   );
