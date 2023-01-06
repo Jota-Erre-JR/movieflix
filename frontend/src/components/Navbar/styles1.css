@@ -3,7 +3,7 @@
   padding: 0px;
 }
 
-.navbar{
+.navbar {
   padding: 0px, 0px;
 }
 
@@ -21,6 +21,22 @@
   color: #000000;
 }
 
+.logout-button {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  margin-right: 15px;
+  color: #000000;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: -0.015em;
+  color: #000000;
+}
 
 @media (min-width: 576px) {
   .navbar {
@@ -49,5 +65,9 @@
 
   .main-nav {
     padding-left: 50px;
+  }
+
+  .logout-button {
+    margin-right: 35px;
   }
 }

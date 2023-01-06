@@ -1,65 +1,41 @@
 import './styles.css';
-
-import MovieCard from 'components/MovieCard';
+import { AxiosRequestConfig } from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
+import { SpringPage } from 'types/vendor/spring';
+import { requestBackend } from 'util/requests';
 
+const MoviesCatalog = () => {
+  const [page, setPage] = useState<SpringPage<Movie>>();
 
-const Catalog = () => {
-  const movie: Movie = {
-    id: 1,
-    title: 'Bob Esponja',
-    subTitle: 'O Incrível Resgate',
-    year: 2020,
-    imgUrl:
-      'https://image.tmdb.org/t/p/w533_and_h300_bestv2/wu1uilmhM4TdluKi2ytfz8gidHf.jpg',
-    synopsis:
-      'Onde está Gary? Segundo Bob Esponja, Gary foi "caracolstrado" pelo temível Rei Poseidon e levado para a cidade perdida de Atlantic City. Junto a Patrick Estrela, ele sai em uma missão de resgate ao querido amigo, e nesta jornada os dois vão conhecer novos personagens e viver inimagináveis aventuras.',
-    genre: [
-      {
-        id: 1,
-        name: 'Comédia',
-      },
-    ],
-    reviews: [
-      {
-        id: 1,
-        text: 'Meh, filme OK',
-        movieId: 1,
-        user: [
-          {
-            id: 1,
-            name: 'Bob',
-            email: 'bob@gmail.com',
-            roles: [
-              {
-                id: 1,
-                authority: 'ROLE_VISITOR',
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  };
+  useEffect(() => {
+    const params: AxiosRequestConfig = {
+      method: 'GET',
+      url: '/movies',
+      withCredentials: true,
+    };
+
+    requestBackend(params).then((response) => {
+      setPage(response.data);
+    });
+  }, []);
 
   return (
     <>
-      <div className="catalog-main-card">
-        <h1>Tela listagem de filmes</h1>
-      </div>
-      <div className="catalog-list">
-         <Link to="/movies/1">
-            <MovieCard movie={movie} />
-          </Link>
-        </div>
-        <div>
-          <Link to="/movies/1">
-            <MovieCard movie={movie} />
-          </Link>
-      </div>
+    <div>
+      <p>Tela listagem de filmes</p>
+    </div>
+    <div className="movie-list">
+    {page?.content.map((movie) => (
+          <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
+            <Link to={"/movies/" + movie.id}>
+              <p>{"Acessar /movies/" + movie.title}</p>
+            </Link>
+          </div>
+        ))}
+    </div>
     </>
   );
 };
-
-export default Catalog;
+export default MoviesCatalog;

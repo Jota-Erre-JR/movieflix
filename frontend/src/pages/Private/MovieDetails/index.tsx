@@ -1,5 +1,6 @@
-import ReviewForm from 'components/ReviewForm';
 import './styles.css';
+
+import ReviewForm from 'components/ReviewForm';
 import ReviewCard from 'components/ReviewCard';
 
 const MovieDetails = () => {
