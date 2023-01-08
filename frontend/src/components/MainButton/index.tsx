@@ -9,7 +9,7 @@ type Props = {
     return(
         <>
         <div className="post-review-button">
-        <button className="btn btn-post-review">
+        <button type="submit" className="btn btn-post-review">
           <p>{text}</p>
         </button>
         </div>

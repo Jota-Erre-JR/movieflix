@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
+    "@types/jwt-decode": "^3.1.0",
     "@types/node": "^16.18.11",
     "@types/qs": "^6.9.7",
     "@types/react": "17.0.0",

@@ -1,16 +1,39 @@
-.catalog-title-container h1 {
+.movie-list-container {
+  padding: 12px 15px;
+}
+
+.movie-list-container h1 {
   font-weight: 700;
   font-size: 24px;
   letter-spacing: -0.015em;
   color: #ffffff;
-  margin: 12px 17px 50px 17px;
+  margin-bottom: 50px;
 }
 
-.catalog-list {
+.movie-list p{
   font-weight: 400;
   font-size: 18px;
   letter-spacing: -0.015em;
   color: #ffffff;
-  margin-bottom: 15px;
-  margin-left: 20px;
+  margin-bottom: 12px;
 }
+
+@media (min-width: 1200px){
+  .movie-list-container {
+    padding: 40px;
+  }
+  
+  .movie-list-container h1 {
+    font-size: 48px;
+    margin-bottom: 39px;
+  }
+  
+  .movie-list p{
+    font-size: 24px;
+   margin-bottom: 27px;
+  }
+
+
+}
+
+  

@@ -8,4 +8,5 @@ export type SpringPage<T> = {
     first: boolean;
     numberOfElements?: number;
     empty: boolean;
+    sort?: string;
   };

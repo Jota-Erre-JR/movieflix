@@ -1,16 +1,9 @@
-.container-fluid {
-  margin: 0px;
-  padding: 0px;
-}
-
-.navbar {
-  padding: 0px, 0px;
-}
 
 .main-nav {
-  min-height: 70px;
+  height: 70px;
   padding-left: 18px;
-  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .nav-logo-text,
@@ -27,13 +20,16 @@
   width: 100px;
   height: 30px;
   margin-right: 15px;
-  color: #000000;
-  font-weight: 700;
-  font-size: 14px;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+}
+
+.logout-button a{
+  color: #000000;
+  font-weight: 700;
+  font-size: 14px;
   letter-spacing: -0.015em;
   color: #000000;
 }
@@ -44,7 +40,7 @@
   }
 
   .main-nav {
-    padding-left: 23px;
+    padding-left: 25px;
   }
 }
 
@@ -54,7 +50,7 @@
   }
 
   .main-nav {
-    padding-left: 31px;
+    padding-left: 35px;
   }
 }
 

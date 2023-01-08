@@ -1,36 +1,31 @@
 import './styles1.css';
-import 'bootstrap/js/dist/collapse.js';
 import history from 'util/history';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { TokenData, getTokenData, isAuthenticated } from 'util/auth';
+import { getTokenData, isAuthenticated } from 'util/auth';
 import { removeAuthData } from 'util/storage';
-
-type AuthData = {
-  authenticated: boolean;
-  tokenData?: TokenData;
-};
+import { AuthContext } from 'AuthContext';
 
 const Navbar = () => {
-  const [authData, setAuthData] = useState<AuthData>({ authenticated: false });
+  const { authContextData, setAuthContextData } = useContext(AuthContext);
 
   useEffect(() => {
     if (isAuthenticated()) {
-      setAuthData({
+      setAuthContextData({
         authenticated: true,
         tokenData: getTokenData(),
       });
     } else {
-      setAuthData({
+      setAuthContextData({
         authenticated: false,
       });
     }
-  }, []);
+  }, [setAuthContextData]);
 
   const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     removeAuthData();
-    setAuthData({
+    setAuthContextData({
       authenticated: false,
     });
     history.replace('/');
@@ -39,20 +34,17 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar bg-primary main-nav">
-        <div className="container-fluid">
-          <Link to="/" className="nav-logo-text">
-            <h4>MovieFlix</h4>
-          </Link>
-          {authData.authenticated ? (
-            <>
-              <div className="logout-button">
-                <a href="#logout" onClick={handleLogoutClick}>
-                  SAIR
-                </a>
-              </div>
-            </>
-          ) : null}
-        </div>
+        <Link to="/movies" className="nav-logo-text">
+          <h4>MovieFlix</h4>
+        </Link>
+
+        {authContextData.authenticated ? (
+          <div className="logout-button">
+            <a href="#logout" onClick={handleLogoutClick}>
+              SAIR
+            </a>
+          </div>
+        ) : undefined}
       </nav>
     </>
   );

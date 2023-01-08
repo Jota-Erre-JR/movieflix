@@ -1,3 +1,7 @@
+.post-review-button{
+  display: flex;
+}
+
 .btn-post-review,
 .btn-post-review:hover,
 .btn-post-review.active,

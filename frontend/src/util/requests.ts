@@ -2,7 +2,20 @@ import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 import history from './history';
 
-export const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
+type LoginResponse = {
+  access_token: string;
+  token_type: string;
+  refresh_token: string;
+  expires_in: number;
+  scope: string;
+  userName: string;
+  userId: number;
+};
+
+export const BASE_URL =
+  process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
+
+const tokenKey = 'authData';
 
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ?? 'myclientid';
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET ?? 'myclientsecret';
@@ -33,8 +46,26 @@ export const requestBackendLogin = (loginData: LoginData) => {
 };
 
 export const requestBackend = (config: AxiosRequestConfig) => {
-  
-  return axios({...config, baseURL: BASE_URL});
+  const headers = config.withCredentials
+    ? {
+        Authorization: 'Bearer ' + getAuthData().access_token,
+      }
+    : config.headers;
+
+  return axios({ ...config, baseURL: BASE_URL, headers });
+};
+
+export const saveAuthData = (obj: LoginResponse) => {
+  localStorage.setItem(tokenKey, JSON.stringify(obj));
+};
+
+export const getAuthData = () => {
+  const str = localStorage.getItem(tokenKey) ?? '{}';
+  return JSON.parse(str) as LoginResponse;
+};
+
+export const removeAuthData = () => {
+  localStorage.removeItem(tokenKey);
 };
 
 // Add a request interceptor
@@ -56,10 +87,9 @@ axios.interceptors.response.use(
     return response;
   },
   function (error) {
-    if (error.response.status === 401) {
-      history.push('/admin/auth');
+    if (error.response.status === 401 || error.response.status === 403) {
+      history.push('/');
     }
-    //
     return Promise.reject(error);
   }
 );

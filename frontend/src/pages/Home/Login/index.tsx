@@ -3,16 +3,29 @@ import './styles.css';
 import { useForm } from 'react-hook-form';
 import MainButton from 'components/MainButton';
 import { requestBackendLogin } from 'util/requests';
-import { useState } from 'react';
-import { getAuthData, saveAuthData } from 'util/storage';
-import { useHistory } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import {  saveAuthData } from 'util/storage';
+import { useHistory, useLocation } from 'react-router-dom';
+import { AuthContext } from 'AuthContext';
+import { getTokenData } from 'util/auth';
 
 type FormData = {
   username: string;
   password: string;
 };
 
+type LocationState = {
+  from: string;
+}
+
 const Login = () => {
+
+  const location = useLocation<LocationState>();
+
+  const {from} = location.state || { from: {pathname: '/movies'} };
+
+  const { setAuthContextData } = useContext(AuthContext);
+
   const [hasError, setHasError] = useState(false);
 
   const {
@@ -27,11 +40,12 @@ const Login = () => {
     requestBackendLogin(formData)
       .then((response) => {
         saveAuthData(response.data);
-        const token = getAuthData().access_token;
-        console.log('TOKEN GERADO: ' + token);
         setHasError(false);
-        console.log('SUCESSO', response);
-        history.push('/movies');
+        setAuthContextData({
+          authenticated: true,
+          tokenData: getTokenData(),
+        });
+        history.replace(from);
       })
       .catch((error) => {
         setHasError(true);
