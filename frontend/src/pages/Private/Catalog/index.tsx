@@ -4,19 +4,23 @@ import { useEffect, useState } from 'react';
 import { AxiosRequestConfig } from 'axios';
 import { requestBackend } from 'util/requests';
 import { Link } from 'react-router-dom';
+import MovieCard from 'components/MovieCard';
 
 const MoviesCatalog = () => {
   const [page, setPage] = useState<Movie[]>([]);
 
-  const arr = [...page];
-  arr.sort((a, b) => a.id - b.id);
-  arr.length = 2;
+  // const arr = [...page];
+  // arr.sort((a, b) => a.id - b.id);
+  //arr.length = 2;
 
   useEffect(() => {
     const params: AxiosRequestConfig = {
       method: 'GET',
       url: '/movies',
       withCredentials: true,
+      params: {
+        size: 4,
+      },
     };
 
     requestBackend(params)
@@ -30,14 +34,15 @@ const MoviesCatalog = () => {
 
   return (
     <>
-      <div className="movie-list-container">
-        <h1>Tela listagem de filmes</h1>
-
-        <div>
-          {arr?.map((movie) => (
-            <div className="movie-list" key={movie.id}>
+      <div className="container-fluid overflow-hidden movie-list-container">
+        <div className="row">
+          {page?.map((movie) => (
+            <div
+              className="movie-list col-12 col-sm-6 col-md-6 col-xl-3"
+              key={movie.id}
+            >
               <Link to={'/movies/' + movie.id}>
-                <p> Acessar /movies/{movie.id}</p>
+                <MovieCard movie={movie} />
               </Link>
             </div>
           ))}

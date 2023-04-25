@@ -1,7 +1,7 @@
 .post-review-container {
-  margin: 18px 10px;
-  padding: 10px, 20px;
-  width: calc(calc(100%) - 20px);
+  margin-top: 25px;
+  padding: 10px 20px;
+  width: calc(calc(100vw) - 20px);
   height: 157px;
   display: flex;
   flex-direction: column;
@@ -36,21 +36,47 @@ input {
   margin-bottom: 17px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 576px) {
   .post-review-container {
-    margin: 25px 40px;
-    padding: 24px, 17px;
-    width: calc(calc(100%) - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    margin-top: 20px;
+    padding: 20px 20px;
+    width: calc(calc(100vw) - 40px);
   }
 
-  .review-form,
   input {
-    height: 50px;
-    width: calc(calc(100vw) - 114px);
+    width: calc(calc(100vw) - 80px);
+  }
+}
+
+@media (min-width: 768px) {
+  .post-review-container {
+    margin-top: 40px;
+    padding: 40px 40px;
+    width: calc(calc(100vw) - 80px);
+    height: 200px;
+  }
+
+  input {
+    width: calc(calc(100vw) - 80px);
+  }
+}
+
+@media (min-width: 992px) {
+  .post-review-container {
+    width: calc(calc(100vw) - 80px);
+  }
+
+  input {
+    width: calc(calc(100vw) - 160px);
+  }
+}
+
+@media (min-width: 1400px) {
+  .post-review-container {
+    width: calc(calc(100vw) - 280px);
+  }
+
+  input {
+    width: calc(calc(100vw) - 360px);
   }
 }

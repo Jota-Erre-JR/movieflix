@@ -1,4 +1,4 @@
-.post-review-button{
+.post-review-button {
   display: flex;
 }
 
@@ -33,11 +33,33 @@
   .btn-post-review:hover,
   .btn-post-review.active,
   .btn-post-review.disable {
-    width: 380px;
+    width: calc(calc(100vw) - 80px);
   }
 
   .btn-post-review p {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-post-review,
+  .btn-post-review:hover,
+  .btn-post-review.active,
+  .btn-post-review.disable {
+    width: calc(calc(100vw) - 160px);
+  }
+
+  .btn-post-review p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-post-review,
+  .btn-post-review:hover,
+  .btn-post-review.active,
+  .btn-post-review.disable {
+    width: 400px;
   }
 }
 

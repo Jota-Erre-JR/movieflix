@@ -1,0 +1,108 @@
+.movie-card {
+  display: block;
+  background: #6c6c6c;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding-top: 25px;
+  margin: 20px 0px 0px 0px;
+  width: 300px;
+  height: 322px;
+}
+
+.movie-card-top img {
+  max-width: 300px;
+}
+
+.movie-card-bottom {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.movie-card-bottom h6 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+
+.movie-card-bottom h5 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  color: #ffc700;
+  margin-top: 5px;
+}
+
+.movie-card-bottom p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  margin-top: 2px;
+}
+
+@media (min-width: 576px) {
+  .movie-card {
+    width: 258px;
+  }
+
+  .movie-card-top img {
+    max-width: 258px;
+  }
+}
+
+@media (min-width: 768px) {
+  .movie-card {
+    width: 324px;
+    height: 364px;
+    padding-top: 20px;
+    margin-top: 40px;
+  }
+
+  .movie-card-top img {
+    max-width: 324px;
+  }
+
+  .movie-card-bottom {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .movie-card {
+    width: 436px;
+    height: 457px;
+    padding-top: 20px;
+    margin-top: 40px;
+  }
+
+  .movie-card-top img {
+    max-width: 436px;
+  }
+
+  .movie-card-bottom {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .movie-card {
+    padding-top: 25px;
+    margin: 20px 0px 0px 0px;
+    width: 258px;
+    height: 322px;
+  }
+
+  .movie-card-top img {
+    max-width: 258px;
+  }
+
+  .movie-card-bottom {
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+}

@@ -1,17 +1,22 @@
-
-.main-nav {
-  height: 70px;
-  padding-left: 18px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+.navbar {
+  margin: 0px;
+  padding: 0px;
 }
 
-.nav-logo-text,
+.main-nav {
+  height: 70px !important;
+  padding-top: 18px!important;
+  padding-bottom: 18px !important;
+}
+
+.nav-logo-text h4,
 .nav-logo-text:hover {
+  display: flex;
   font-weight: 700;
   font-size: 24px;
   letter-spacing: -0.015em;
   color: #000000;
+  margin-left: 18px;
 }
 
 .logout-button {

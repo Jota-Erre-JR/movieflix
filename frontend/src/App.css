@@ -18,6 +18,7 @@ a,
 a:hover {
   text-decoration: none;
   color: unset;
+  margin: 0px
 }
 
 .base-input {
