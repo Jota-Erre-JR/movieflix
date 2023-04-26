@@ -18,7 +18,13 @@ a,
 a:hover {
   text-decoration: none;
   color: unset;
-  margin: 0px
+  margin: 0px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .base-input {
