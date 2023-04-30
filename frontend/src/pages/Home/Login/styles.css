@@ -7,9 +7,9 @@
   border-radius: 4px;
   margin: 0px 0px;
   width: 300px;
-  display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
 }
 
 .login-card h1 {
@@ -33,9 +33,16 @@
 
 .login-submit text {
   font-size: 20px;
+  width: 384px;
 }
 
 @media (min-width: 576px) {
+  .form-control {
+    display: flex;
+    width: 384px;
+    align-items: center;
+    justify-items: center;
+  }
   .login-card {
     width: 480px;
     padding-left: 48px;

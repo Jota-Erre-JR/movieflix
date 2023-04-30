@@ -59,7 +59,7 @@
   .btn-post-review:hover,
   .btn-post-review.active,
   .btn-post-review.disable {
-    width: 400px;
+    width: 400px !important;
   }
 }
 
@@ -68,7 +68,7 @@
   .btn-post-review:hover,
   .btn-post-review.active,
   .btn-post-review.disable {
-    width: 334px;
+    width: 400px;
   }
 
   .btn-post-review p {
